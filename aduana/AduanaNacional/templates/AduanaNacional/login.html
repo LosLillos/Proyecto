@@ -7,7 +7,20 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 </head>
 <body>
-	<img src="/static/AduanaNacional/css/aduana0.jpeg">
-	<h1>Hello</h1>
+	<div class="container">
+		<center>
+			<img src="/static/AduanaNacional/css/aduana0.jpeg">
+		</center>
+	</div>
+	<br>
+	<div class="log-form">
+		<center>
+			<form method="POST">
+				{% csrf_token %}
+				{{ form.as_p }}
+				<input class="btn btn-secondary" type="submit" name="" value="Login">
+			</form>
+		</center>
+	</div>
 </body>
 </html>
