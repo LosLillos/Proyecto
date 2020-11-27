@@ -1,0 +1,85 @@
+:root {
+    --dark: #000000;
+    --light: #ffffff;
+    --bg: #202226;
+}
+
+body {
+    font-family: 'Titillium Web', sans-serif;
+    background-color: var(--bg);
+    position: relative;
+    margin: 0;
+    min-height: 100vh;
+}
+
+section {
+    min-height: 100vh;
+}
+
+.navbar {
+    min-height: 7rem;
+}
+
+.lead {
+    font-size: 2.4rem !important;
+}
+
+.bg-dark {
+    background-color: var(--dark) !important;
+}
+
+.bg-light {
+    background-color: var(--light) !important;
+}
+
+#menu {
+    top: 0;
+}
+
+#menu-dark, #menu-light {
+    min-height: 100vh;
+    width: 0;
+    transition: width 1s;
+}
+
+#content-dark, #content-light {
+    min-height: 100vh;
+    padding: 8rem 10rem;
+    opacity: 0;
+    transition: 1s;
+}
+
+.z-top {
+    z-index: 9999;
+}
+
+#circle {
+    background-color: transparent;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    transition: 1s;
+}
+
+#menu-open {
+    transition: 1s;
+    z-index: 1000;
+    top: 3px;
+    left: 16px;
+}
+
+#menu-close {
+    opacity: 0;
+    transition: 1s;
+    z-index: 999;
+    top: 3px;
+    left: 18px;
+}
+
+.btn-outline-light {
+    color: var(--light) !important;
+}
+
+.btn-outline-light:hover {
+    color: var(--dark) !important;
+}
