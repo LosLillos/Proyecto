@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-
+{% load static %}
 <head>
 
   <!-- Bootstrap CSS -->
@@ -20,8 +20,11 @@
 
   <img src="/static/AduanaNacional/css/aduana1.jpg">
 
+  <br>
+
   <nav class="navbar navbar-expand-lg position-absolute w-100 bg-transparent z-top">
     <div class="container">
+      <a class="nbtn btn-secondary" href="{% url 'logout' %}">Cerrar Sesión</a>
     <a class="navbar-brand text-light" href=""></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
