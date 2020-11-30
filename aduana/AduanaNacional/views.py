@@ -13,3 +13,9 @@ def mapa(request):
 
 def inventario(request):
 	return render(request,'AduanaNacional/inventario.html')
+
+def objeto(request):
+	return render(request,'AduanaNacional/objeto.html')
+
+def anadirObjeto(request):
+	return render(request,'AduanaNacional/anadirObjeto.html')
