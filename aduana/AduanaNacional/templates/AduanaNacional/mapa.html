@@ -2,12 +2,30 @@
 <html>
 {% load static %}
 <head>
-	<title>Mapa</title>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-</head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css'>
+	<link rel="stylesheet" href="/static/AduanaNacional/css/stylemap.css">
+  
+  </head>
+
 <body>
 	<img src="/static/AduanaNacional/css/aduana1.jpg">
-	<h1>Hello</h1>
 </body>
+<body>
+<!-- partial:index.partial.html -->
+<h1>Ubicaciones</h1>
+<section id="google-map">
+    <div id="google-container"></div>
+    <div id="zoom-in"><i class="fa fa-plus"></i></div>
+    <div id="zoom-out"><i class="fa fa-minus"></i></div>
+</section>
+
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://maps.googleapis.com/maps/api/js?key=&sensor=false&extension=.js'></script>
+<script  src="/static/AduanaNacional/css/scriptmapa.js"></script>
+
+</body>
+
 </html>
