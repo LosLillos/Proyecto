@@ -1,3 +1,5 @@
 from django.contrib import admin
+from AduanaNacional.models import *
 
-# Register your models here.
+admin.site.register(Objeto)
+admin.site.register(Zona)
