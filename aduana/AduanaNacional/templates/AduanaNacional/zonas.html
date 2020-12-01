@@ -47,6 +47,17 @@
     <h1 class="align-self-center text-center text-light mx-auto">BIENVENIDO</h1>
   </section>
 
+  <section>
+    {% for zona in Zonas %}
+    <a href="/AduanaNacional/inventario.html">
+      <h1 class="align-self-center text-center text-light mx-auto">Nombre: {{ zona.nombre }}</h1><br>
+      <h1 class="align-self-center text-center text-light mx-auto">Municipio: {{ zona.municipio }}</h1><br>
+      <h1 class="align-self-center text-center text-light mx-auto">Departamento: {{ zona.departamento }}</h1><br>
+      <h1 class="align-self-center text-center text-light mx-auto">Administracion: {{ zona.administracion }}</h1><br>
+    </a>
+    {% endfor %}
+  </section>
+
   <div id="menu" class="position-absolute w-100">
     <div class="row no-gutters">
       <div class="col-lg-6">

@@ -5,6 +5,8 @@ class Zona(models.Model):
 	municipio = models.CharField(max_length=50)
 	departamento = models.CharField(max_length=20)
 	administracion = models.CharField(max_length=20)
+	def __str__(self):
+		return self.nombre
 
 class Objeto(models.Model):
 	origen = models.CharField(max_length=100)
@@ -13,3 +15,5 @@ class Objeto(models.Model):
 	propietario = models.CharField(max_length=50)
 	foto = models.ImageField(upload_to='AduanaNacional/objetos/')
 	zona = models.CharField(max_length=50)
+	def __str__(self):
+		return self.descripcion
