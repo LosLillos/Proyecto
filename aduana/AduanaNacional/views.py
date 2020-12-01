@@ -8,7 +8,8 @@ def login(request):
 	return render(request,'AduanaNacional/login.html')
 
 def zonas(request):
-	return render(request,'AduanaNacional/zonas.html')
+	lista_zonas = Zona.objects.all()
+	return render(request,'AduanaNacional/zonas.html',{"Zonas":lista_zonas})
 
 def mapa(request):
 	return render(request,'AduanaNacional/mapa.html')
