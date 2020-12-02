@@ -7,53 +7,57 @@
   <link rel="stylesheet" href="/static/AduanaNacional/css/bootstrap.min.css">
 
   <!-- Estilo CSS-->
-  <link rel="stylesheet" href="/static/AduanaNacional/css/styles.css">
+  <link rel="stylesheet" href="/static/AduanaNacional//css/styles.css">
 
   <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300&display=swap" rel="stylesheet">
 
   <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
 
   <title>Zonas</title>
-  <neta name= "viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-  <img class="portada" src="/static/AduanaNacional/img/aduana1.jpg">
+
+  <img src="/static/AduanaNacional/img/aduana1.jpg">
 
   <br>
 
   <nav class="navbar navbar-expand-lg position-absolute w-100 bg-transparent z-top">
     <div class="container">
-        <a class="navbar-brand text-light" href="{% url 'logout' %}"><FONT SIZE=6>Cerrar Sesión</FONT></a>
-        <a class="navbar-brand text-light" href=""></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-
-      
-
+      <a class="navbar-brand text-light" href="{% url 'logout' %}">Cerrar Sesión</a>
+    <a class="navbar-brand text-light" href=""></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a id="circle" class="nav-link d-flex position-relative" href="#">
+            <i id="menu-open" class="icon ion-md-menu position-absolute lead text-light" onclick="openMenu()"></i>
+            <i id="menu-close" class="icon ion-md-close position-absolute lead text-light" onclick="hideMenu()"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+    </div>
   </nav>
 
   <section class="d-flex">
-     <h1 class="align-self-center text-center text-light mx-auto"><FONT SIZE=10>BIENVENIDO</FONT></h1>
+    <h1 class="align-self-center text-center text-light mx-auto">BIENVENIDO</h1>
   </section>
 
-  
-    {% for zona in Zonas %} 
-      <li>
-        <!---- <h1 class="align-self-center text-center text-light mx-auto">{{ zona.nombre }}</h1> --->
-        <a href="/AduanaNacional/inventario.html">
-          <h1 class="align-self-center text-center text-light mx-auto">{{ zona.nombre }}</h1>
-          <h1 class="align-self-center text-center text-light mx-auto">Municipio: {{ zona.municipio }}</h1>
-          <h1 class="align-self-center text-center text-light mx-auto">Departamento: {{ zona.departamento }}</h1>
-          <h1 class="align-self-center text-center text-light mx-auto">Administracion: {{ zona.administracion }}</h1>
-          <br>
-        </a>
-      </li>
-      <hr>
+  <section>
+    {% for zona in Zonas %}
+    <a href="/AduanaNacional/inventario.html">
+      <h1 class="align-self-center text-center text-light mx-auto">Nombre: {{ zona.nombre }}</h1>
+      <h1 class="align-self-center text-center text-light mx-auto">Municipio: {{ zona.municipio }}</h1>
+      <h1 class="align-self-center text-center text-light mx-auto">Departamento: {{ zona.departamento }}</h1>
+      <h1 class="align-self-center text-center text-light mx-auto">Administracion: {{ zona.administracion }}</h1>
+    </a>
     {% endfor %}
+  </section>
 
-<!--- MENU DE ANTES
   <div id="menu" class="position-absolute w-100">
     <div class="row no-gutters">
       <div class="col-lg-6">
@@ -77,15 +81,17 @@
       <div class="col-lg-6">
         <div id="menu-light" class="bg-light">
           <div id="content-light">
+          <!--- <h5 class="mb-0">Mapa tal vez</h5> --->
           <center>
             <img src="/static/AduanaNacional/img/logoaduana.png" align="absmiddle" width="500" height="500">
           </center>
+          
+          <!--- <a href="#" class="text-muted">Learn more</a> --->
           </div>
         </div>
       </div>
     </div>
   </div>
---->
 
   <script src="/static/AduanaNacional/javascript/jquery.js"></script>
   <script src="/static/AduanaNacional/javascript/popper.min.js"></script>
