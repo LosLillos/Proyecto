@@ -22,11 +22,15 @@ def inventario2(request,zona):
 	lista_objetos = Objeto.objects.filter(zona=zona)
 	return render(request,'AduanaNacional/inventario.html',{"Objetos":lista_objetos,"Zona":zona})
 
+def objeto2(request,zona,desc):
+	objeto = Objeto.objects.get(descripcion=desc)
+	return render(request,'AduanaNacional/objeto.html',{"Objeto":objeto})
+
 def objeto(request):
 	objeto = Objeto.objects.get(origen="Chile")
 	return render(request,'AduanaNacional/objeto.html',{"Objeto":objeto})
 
-def anadirObjeto(request):
+def anadirObjeto(request,zona):
 	if request.method=="POST":
 		form = ObjetoForm(request.POST, request.FILES)
 		if form.is_valid():
@@ -35,9 +39,9 @@ def anadirObjeto(request):
 			descripcion = form.cleaned_data['descripcion']
 			propietario = form.cleaned_data['propietario']
 			foto = form.cleaned_data['foto']
-			objeto = Objeto(origen=origen,fecha=fecha,descripcion=descripcion,propietario=propietario,foto=foto,zona="Zona 1")
+			objeto = Objeto(origen=origen,fecha=fecha,descripcion=descripcion,propietario=propietario,foto=foto,zona=zona)
 			objeto.save()
-			return redirect('/AduanaNacional/inventario.html/')
+			return redirect('/AduanaNacional/inventario/'+zona+'/')
 	else:
 		form = ObjetoForm()
 	return render(request,'AduanaNacional/anadirObjeto.html',{'form':form})
