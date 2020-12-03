@@ -42,7 +42,7 @@
     {% for zona in Zonas %} 
       <li>
         <!---- <h1 class="align-self-center text-center text-light mx-auto">{{ zona.nombre }}</h1> --->
-        <a href="/AduanaNacional/inventario.html">
+        <a href="/AduanaNacional/inventario/{{ zona.nombre }}/">
           <h1 class="align-self-center text-center text-light mx-auto">{{ zona.nombre }}</h1>
           <h1 class="align-self-center text-center text-light mx-auto">Municipio: {{ zona.municipio }}</h1>
           <h1 class="align-self-center text-center text-light mx-auto">Departamento: {{ zona.departamento }}</h1>
