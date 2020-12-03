@@ -2,16 +2,21 @@
 <html>
 {% load static %}
 <head>
-	<title>Inventario</title>
-	<link rel="stylesheet" href="/static/AduanaNacional/css/inventariostyle.css">
+	  <!-- Estilo CSS-->
+    <link rel="stylesheet" href="/static/AduanaNacional/css/inventariostyle.css">
+
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+	<title>Inventario</title>
 </head>
 <body>
 	<img class="portada" src="/static/AduanaNacional/img/aduana1.jpg">
+       <button class="navbar text-dark" href="{% url 'anadirObjeto' %}"><FONT SIZE=6>Añadir objeto</FONT></button>
+    </nav>
 
 	<section >
-     <h1 class="align-self-center text-center  mx-auto"><FONT SIZE=10>Inventario {{ Zona }}</FONT></h1>
+     <h1 class="align-self-center text-center mx-auto"><FONT SIZE=10>Inventario: {{ Zona }}</FONT></h1>
   </section>
 
 	<section>
@@ -31,7 +36,7 @@
 				</a>
 			</li>
 		</section>
-	{% endfor %}
+		{% endfor %}
 	</section>
 	
 </body>

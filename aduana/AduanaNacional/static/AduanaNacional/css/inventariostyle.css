@@ -23,3 +23,7 @@ body {
 		padding-bottom: 30px;
 	}
 }
+.navbar {
+    min-height: 2rem;
+    margin-left: 1200px;
+}
