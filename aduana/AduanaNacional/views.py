@@ -18,6 +18,10 @@ def inventario(request):
 	lista_objetos = Objeto.objects.all()
 	return render(request,'AduanaNacional/inventario.html',{"Objetos":lista_objetos})
 
+def inventario2(request,zona):
+	lista_objetos = Objeto.objects.filter(zona=zona)
+	return render(request,'AduanaNacional/inventario.html',{"Objetos":lista_objetos,"Zona":zona})
+
 def objeto(request):
 	objeto = Objeto.objects.get(origen="Chile")
 	return render(request,'AduanaNacional/objeto.html',{"Objeto":objeto})
