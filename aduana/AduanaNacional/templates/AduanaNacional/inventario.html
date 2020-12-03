@@ -11,9 +11,10 @@
 	<title>Inventario</title>
 </head>
 <body>
-	<img class="portada" src="/static/AduanaNacional/img/aduana1.jpg">
-       <button class="navbar text-dark" href="{% url 'anadirObjeto' %}"><FONT SIZE=6>Añadir objeto</FONT></button>
-    </nav>
+	<a href="/AduanaNacional/zonas.html">
+		<img class="portada" src="/static/AduanaNacional/img/aduana1.jpg">
+	</a>
+    <a href="/AduanaNacional/anadirObjeto/{{ Zona }}/">Añadir objeto</a>
 
 	<section >
      <h1 class="align-self-center text-center mx-auto"><FONT SIZE=10>Inventario: {{ Zona }}</FONT></h1>
@@ -24,7 +25,7 @@
 		<section class="">
 			<li>
 				<!---- <h1 class="align-self-center text-center text-light mx-auto">{{ zona.nombre }}</h1> --->
-				<a href="/AduanaNacional/objeto.html">
+				<a href="/AduanaNacional/inventario/{{ Zona }}/{{ objeto.descripcion }}/">
 					<img src="/media/{{ objeto.foto }}" width="300" height="300"><br>
 					<p>
 						Descripción: {{ objeto.descripcion }}<br>

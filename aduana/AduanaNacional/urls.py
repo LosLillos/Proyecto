@@ -11,6 +11,7 @@ urlpatterns = [
 	path('AduanaNacional/mapa.html',views.mapa),
 	path('AduanaNacional/inventario.html',views.inventario),
 	path('AduanaNacional/inventario/<str:zona>/',views.inventario2),
+	path('AduanaNacional/inventario/<str:zona>/<str:desc>/',views.objeto2),
 	path('AduanaNacional/objeto.html',views.objeto),
-	path('AduanaNacional/anadirObjeto.html',views.anadirObjeto,name="anadirObjeto"),
+	path('AduanaNacional/anadirObjeto/<str:zona>/',views.anadirObjeto,name="anadirObjeto"),
 ]
