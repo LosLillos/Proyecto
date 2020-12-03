@@ -15,10 +15,12 @@ def mapa(request):
 	return render(request,'AduanaNacional/mapa.html')
 
 def inventario(request):
-	return render(request,'AduanaNacional/inventario.html')
+	lista_objetos = Objeto.objects.all()
+	return render(request,'AduanaNacional/inventario.html',{"Objetos":lista_objetos})
 
 def objeto(request):
-	return render(request,'AduanaNacional/objeto.html')
+	objeto = Objeto.objects.get(origen="Chile")
+	return render(request,'AduanaNacional/objeto.html',{"Objeto":objeto})
 
 def anadirObjeto(request):
 	if request.method=="POST":

@@ -8,6 +8,26 @@
 </head>
 <body>
 	<img src="/static/AduanaNacional/img/aduana1.jpg">
-	<h1>Hello</h1>
+	
+	<section>
+		{% for objeto in Objetos %} 
+		<section>
+			<li>
+				<!---- <h1 class="align-self-center text-center text-light mx-auto">{{ zona.nombre }}</h1> --->
+				<a href="/AduanaNacional/objeto.html">
+					<img src="/media/{{ objeto.foto }}" width="300" height="300"><br>
+					<p>
+						Descripción: {{ objeto.descripcion }}<br>
+						Origen: {{ objeto.origen }}<br>
+						Fecha de ingreso: {{ objeto.fecha }}<br>
+						Propietario: {{ objeto.propietario }}<br>
+						<br>
+					</p>
+				</a>
+			</li>
+		</section>
+	{% endfor %}
+	</section>
+	
 </body>
 </html>
