@@ -3,15 +3,23 @@
 {% load static %}
 <head>
 	<title>Objeto</title>
+	<link rel="stylesheet" href="/static/AduanaNacional/css/objetostyle.css">
 </head>
 <body>
-	<img src="/static/AduanaNacional/img/aduana1.jpg">
-	<img src="/media/{{ Objeto.foto }}" width="300" height="300"><br>
-	<p>
+	<img class="portada" src="/static/AduanaNacional/img/aduana1.jpg">
+
+<section class="d-flex">
+	<center>
+	<img src="/media/{{ Objeto.foto }}" width="400" height="400"><br>
+	<p class="text-light">
 		Descripcion: {{ Objeto.descripcion }}<br>
 		Origen: {{ Objeto.origen }}<br>
 		Fecha: {{ Objeto.fecha }}<br>
 		Propietario: {{ Objeto.propietario }}<br>
 	</p>
+	
+	</center>
+	
+</section>
 </body>
 </html>
