@@ -1,6 +1,6 @@
 :root {
     --dark: #000000;
-    --light: #ffffff;
+    --light: #fffff;
     --bg: #202226;
 }
 
@@ -95,3 +95,5 @@ section {
 .btn-outline-light:hover {
     color: var(--dark) !important;
 }
+
+
