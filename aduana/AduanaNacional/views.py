@@ -14,20 +14,12 @@ def zonas(request):
 def mapa(request):
 	return render(request,'AduanaNacional/mapa.html')
 
-def inventario(request):
-	lista_objetos = Objeto.objects.all()
-	return render(request,'AduanaNacional/inventario.html',{"Objetos":lista_objetos})
-
-def inventario2(request,zona):
+def inventario(request,zona):
 	lista_objetos = Objeto.objects.filter(zona=zona)
 	return render(request,'AduanaNacional/inventario.html',{"Objetos":lista_objetos,"Zona":zona})
 
-def objeto2(request,zona,desc):
+def objeto(request,zona,desc):
 	objeto = Objeto.objects.get(descripcion=desc)
-	return render(request,'AduanaNacional/objeto.html',{"Objeto":objeto})
-
-def objeto(request):
-	objeto = Objeto.objects.get(origen="Chile")
 	return render(request,'AduanaNacional/objeto.html',{"Objeto":objeto})
 
 def anadirObjeto(request,zona):
@@ -44,4 +36,26 @@ def anadirObjeto(request,zona):
 			return redirect('/AduanaNacional/inventario/'+zona+'/')
 	else:
 		form = ObjetoForm()
-	return render(request,'AduanaNacional/anadirObjeto.html',{'form':form})
+	return render(request,'AduanaNacional/anadirObjeto.html',{'form':form,'accion':"Añadir"})
+
+def editar(request,zona,desc):
+	objeto1 = Objeto.objects.get(descripcion=desc,zona=zona)
+	form = ObjetoForm(instance=objeto1)
+	if request.method=="POST":
+		form = ObjetoForm(request.POST, request.FILES,instance=objeto1)
+		if form.is_valid():
+			origen = form.cleaned_data['origen']
+			fecha = form.cleaned_data['fecha']
+			descripcion = form.cleaned_data['descripcion']
+			propietario = form.cleaned_data['propietario']
+			foto = form.cleaned_data['foto']
+			objeto = Objeto(origen=origen,fecha=fecha,descripcion=descripcion,propietario=propietario,foto=foto,zona=zona)
+			objeto.save()
+			objeto1.delete()
+			return render(request,'AduanaNacional/objeto.html',{"Objeto":objeto})
+	return render(request,'AduanaNacional/anadirObjeto.html',{'form':form,'accion':"Editar"})
+
+def eliminar(request,zona,desc):
+	objeto = Objeto.objects.get(descripcion=desc,zona=zona)
+	objeto.delete()
+	return inventario(request,zona)

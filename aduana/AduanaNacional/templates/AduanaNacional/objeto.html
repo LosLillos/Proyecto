@@ -6,8 +6,9 @@
 	<link rel="stylesheet" href="/static/AduanaNacional/css/objetostyle.css">
 </head>
 <body>
-	<img class="portada" src="/static/AduanaNacional/img/aduana1.jpg">
-
+	<a href="/AduanaNacional/inventario/{{ Objeto.zona }}/">
+		<img class="portada" src="/static/AduanaNacional/img/aduana1.jpg">
+	</a>
 <section class="d-flex">
 	<center>
 	<img src="/media/{{ Objeto.foto }}" width="400" height="400"><br>
@@ -17,9 +18,13 @@
 		Fecha: {{ Objeto.fecha }}<br>
 		Propietario: {{ Objeto.propietario }}<br>
 	</p>
-	
 	</center>
-	
+</section>
+<section class="d-flex">
+	<center>
+		<a href="/AduanaNacional/editar/{{ Objeto.zona }}/{{ Objeto.descripcion }}/">Editar</a>
+		<a href="/AduanaNacional/eliminar/{{ Objeto.zona }}/{{ Objeto.descripcion }}/">Eliminar</a>
+	</center>
 </section>
 </body>
 </html>
