@@ -9,9 +9,9 @@ urlpatterns = [
 	path('AduanaNacional/login.html',LoginView.as_view(template_name='AduanaNacional/login.html'),name="login"),
 	path('AduanaNacional/zonas.html',views.zonas),
 	path('AduanaNacional/mapa.html',views.mapa),
-	path('AduanaNacional/inventario.html',views.inventario),
-	path('AduanaNacional/inventario/<str:zona>/',views.inventario2),
-	path('AduanaNacional/inventario/<str:zona>/<str:desc>/',views.objeto2),
-	path('AduanaNacional/objeto.html',views.objeto),
+	path('AduanaNacional/inventario/<str:zona>/',views.inventario),
+	path('AduanaNacional/inventario/<str:zona>/<str:desc>/',views.objeto),
 	path('AduanaNacional/anadirObjeto/<str:zona>/',views.anadirObjeto,name="anadirObjeto"),
+	path('AduanaNacional/eliminar/<str:zona>/<str:desc>/',views.eliminar),
+	path('AduanaNacional/editar/<str:zona>/<str:desc>/',views.editar),
 ]
