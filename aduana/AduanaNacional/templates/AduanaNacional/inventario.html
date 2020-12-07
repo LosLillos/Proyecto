@@ -16,10 +16,15 @@
 	<a href="/AduanaNacional/zonas.html">
 		<img class="portada" src="/static/AduanaNacional/img/aduana1.jpg">
 	</a>
-
 	
-    <div class="container">
-    <a class="navbar lead text-dark" href="/AduanaNacional/anadirObjeto/{{ Zona }}/">Añadir Objeto</a>
+	<div class="container">
+		<h2>Buscar en la descripción:</h2>
+		<form action="/AduanaNacional/inventarioFiltrar/{{ Zona }}/" method="GET">
+			<input type="text" name="filtro">
+			<button type="submit">Buscar</button>
+		</form>	
+	
+		<a class="navbar lead text-dark" href="/AduanaNacional/anadirObjeto/{{ Zona }}/">Añadir Objeto</a>
 
 	<section >
      <h1 class="align-self-center text-center mx-auto"><FONT SIZE=10>Inventario: {{ Zona }}</FONT></h1>
