@@ -16,6 +16,7 @@ urlpatterns = [
 	path('AduanaNacional/anadirObjeto/<str:zona>/',views.anadirObjeto,name="anadirObjeto"),
 	path('AduanaNacional/eliminar/<str:zona>/<str:desc>/',views.eliminar),
 	path('AduanaNacional/editar/<str:zona>/<str:desc>/',views.editar),
+	path('AduanaNacional/inventarioFiltrar/<str:zona>/',views.filtrar),
 
 	path('persona/',PersonaList.as_view(), name = 'persona_list'),
 ]
