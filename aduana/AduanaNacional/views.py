@@ -4,6 +4,25 @@ from django.contrib import messages
 from AduanaNacional.forms import *
 from AduanaNacional.models import *
 
+from rest_framework import generics
+from django.urls import reverse_lazy
+from django.utils.decorators import method_decorator
+from django.views.decorators.cache import never_cache
+from django.views.decorators.csrf import csrf_protect
+from django.views.generic.edit import FormView
+from django.contrib.auth import login,logout,authenticate
+from django.http import HttpResponseRedirect
+from django.contrib.auth.forms import AuthenticationForm
+from rest_framework.authtoken.models import Token
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.views import APIView
+from rest_framework import status
+from rest_framework.response import Response
+from .models import Persona
+from .serializers import PersonaSerializer
+
+
 def login(request):
 	return render(request,'AduanaNacional/login.html')
 
@@ -59,3 +78,36 @@ def eliminar(request,zona,desc):
 	objeto = Objeto.objects.get(descripcion=desc,zona=zona)
 	objeto.delete()
 	return inventario(request,zona)
+
+
+
+class PersonaList(generics.ListCreateAPIView):
+	queryset = Persona.objects.all()
+	serializer_class = PersonaSerializer
+	permission_classes = (IsAuthenticated,)
+	authentication_class = (TokenAuthentication,)
+
+def login2(request,form):
+	return render(request,'logina.html')
+
+
+class Logina(FormView):
+    template_name = "logina.html"
+    form_class = AuthenticationForm
+    success_url = reverse_lazy('AduanaNacional:persona_list')
+
+    @method_decorator(csrf_protect)
+    @method_decorator(never_cache)
+    def dispatch(self,request,*args,**kwargs):
+        if request.user.is_authenticated:
+            return HttpResponseRedirect(self.get_success_url())
+        else:
+            return super(Logina,self).dispatch(request,*args,*kwargs)
+
+    def form_valid(self,form):
+        user = authenticate(username = form.cleaned_data['username'], password = form.cleaned_data['password'])
+        token,_ = Token.objects.get_or_create(user = user)
+        if token:
+            login2(self.request, form.get_user())
+            return super(Logina,self).form_valid(form)
+	
