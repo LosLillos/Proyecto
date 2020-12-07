@@ -82,7 +82,7 @@ def eliminar(request,zona,desc):
 def filtrar(request,zona):
 	if request.method == "GET":
 		filtro = request.GET.get('filtro')
-		lista_objetos = Objeto.objects.filter(descripcion__contains=filtro,zona=zona)
+		lista_objetos = Objeto.objects.filter(descripcion__icontains=filtro,zona=zona)
 		return render(request,'AduanaNacional/inventario.html',{"Objetos":lista_objetos,"Zona":zona})
 
 
