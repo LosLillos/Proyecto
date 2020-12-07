@@ -1,7 +1,10 @@
 $(document).ready(function(){
-    var latitude = 51.5738172,
-      longitude = 0.3543339,
-      map_zoom = 7;
+
+
+ 
+  var latitude = -16.468252,
+  longitude = -65.553275,
+  map_zoom = 6;
   
     var is_internetExplorer11= navigator.userAgent.toLowerCase().indexOf('trident') > -1;
     var marker_url = ( is_internetExplorer11 ) ? 'https://www.mediafire.com/convkey/d992/boaao261r6yapedzg.jpg' : 'https://www.mediafire.com/convkey/d992/boaao261r6yapedzg.jpg';
@@ -158,19 +161,51 @@ $(document).ready(function(){
           styles: style,
       }
     var map = new google.maps.Map(document.getElementById('google-container'), map_options);
-    var marker = new google.maps.Marker({
-        position: new google.maps.LatLng(latitude, longitude),
-        map: map,
-        visible: true,
-      icon: marker_url,
-    });
     
-    var marker = new google.maps.Marker({
-      position: new google.maps.LatLng(-16.479016, -68.114902),
+    
+    var marker1 = new google.maps.Marker({
+      position: new google.maps.LatLng(-17.5732153, -63.1574694),
       map: map,
       visible: true,
     icon: marker_url,
   });
+  var marker3 = new google.maps.Marker({
+    position: new google.maps.LatLng(-17.768856, -63.129359),
+    map: map,
+    visible: true,
+  icon: marker_url,
+  });
+  var marker4 = new google.maps.Marker({
+    position: new google.maps.LatLng(-17.991408, -67.107528),
+    map: map,
+    visible: true,
+  icon: marker_url,
+  });
+  var marker5 = new google.maps.Marker({
+    position: new google.maps.LatLng(-17.248388, -67.903569),
+    map: map,
+    visible: true,
+  icon: marker_url,
+  });
+  var marker6 = new google.maps.Marker({
+    position: new google.maps.LatLng(-16.546094, -68.228414),
+    map: map,
+    visible: true,
+  icon: marker_url,
+  });
+  var marker7 = new google.maps.Marker({
+  position: new google.maps.LatLng(-11.132816, -68.795140),
+  map: map,
+  visible: true,
+icon: marker_url,
+});
+
+
+
+
+
+
+
   
     function CustomZoomControl(controlDiv, map) {
         var controlUIzoomIn= document.getElementById('zoom-in'),
