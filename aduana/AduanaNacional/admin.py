@@ -3,3 +3,4 @@ from AduanaNacional.models import *
 
 admin.site.register(Objeto)
 admin.site.register(Zona)
+admin.site.register(Persona)

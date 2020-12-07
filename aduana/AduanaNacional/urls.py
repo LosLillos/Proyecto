@@ -3,6 +3,8 @@ from . import views
 from django.contrib.auth.views import LoginView
 from django.contrib.auth import logout
 
+from .views import PersonaList
+
 urlpatterns = [
 	path('',LoginView.as_view(template_name='AduanaNacional/login.html'),name="login"),
 	path('logout',logout,name="logout"),
@@ -14,4 +16,6 @@ urlpatterns = [
 	path('AduanaNacional/anadirObjeto/<str:zona>/',views.anadirObjeto,name="anadirObjeto"),
 	path('AduanaNacional/eliminar/<str:zona>/<str:desc>/',views.eliminar),
 	path('AduanaNacional/editar/<str:zona>/<str:desc>/',views.editar),
+
+	path('persona/',PersonaList.as_view(), name = 'persona_list'),
 ]
