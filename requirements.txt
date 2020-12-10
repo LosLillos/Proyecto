@@ -1,0 +1,2 @@
+Pillow
+django==2.2.17
