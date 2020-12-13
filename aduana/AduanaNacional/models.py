@@ -1,7 +1,7 @@
 from django.db import models
 
 class Zona(models.Model):
-	nombre = models.CharField(max_length=50)
+	nombre = models.CharField(max_length=100)
 	municipio = models.CharField(max_length=50)
 	departamento = models.CharField(max_length=20)
 	administracion = models.CharField(max_length=20)
