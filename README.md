@@ -18,3 +18,5 @@ sudo apt-get install postgresql-client postgresql-client-common
 sudo apt-get install libpq-dev python-dev
 
 pip3 install psycopg2
+
+pip3 install djangorestframework
