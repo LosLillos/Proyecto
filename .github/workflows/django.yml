@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Zip del proyecto
-        run: ll
+        run: ls -l
       #- name: Subir zip del proyecto
         #uses: actions/upload-artifact@v2
         #with:
