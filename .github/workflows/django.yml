@@ -23,8 +23,9 @@ jobs:
   upload:
     runs-on: ubuntu-latest
     steps:
+      - name: Zip del proyecto
+        run: tar -zcvf proyecto-aduana.tar.gz ./
       - name: Subir zip del proyecto
         uses: actions/upload-artifact@v2
         with:
-          name: proyecto-aduana
-          path: ./*
+          path: proyecto-aduana.tar.gz
