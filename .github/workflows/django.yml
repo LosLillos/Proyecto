@@ -20,13 +20,8 @@ jobs:
           pip install flake8
           flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
           flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-  upload:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - name: Zip del proyecto
-        run: ls -l
-      #- name: Subir zip del proyecto
-        #uses: actions/upload-artifact@v2
-        #with:
-        #  path: proyecto-aduana.zip
+      - name: Subir zip del proyecto
+        uses: actions/upload-artifact@v2
+        with:
+          name: proyecto-aduana
+          path: ./
