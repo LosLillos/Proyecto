@@ -1,4 +1,7 @@
 # Proyecto
+
+### Dependencias necesarias
+
 sudo apt-get install python3
 
 sudo apt-get install python3-pip
@@ -20,3 +23,23 @@ sudo apt-get install libpq-dev python-dev
 pip3 install psycopg2
 
 pip3 install djangorestframework
+
+### Configuración Base de Datos
+
+sudo -u postgres psql
+
+(#) \password postgres (Ingresamos la nueva contraseña: password)
+
+(#) \q (para salir)
+
+sudo -u postgres createdb andb
+
+### Levantar el proyecto
+
+(Dentro de la carpeta aduana)
+
+python3 manage.py makemigrations
+
+python3 manage.py migrate
+
+python3 manage.py runserver
