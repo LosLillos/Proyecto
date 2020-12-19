@@ -7,19 +7,30 @@
 	<link rel="stylesheet" href="/static/AduanaNacional/css/styleAnadirObjeto.css">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 </head>
-<body>
+<body style="background-color:#202226;">
 	<center>
 		<img class="portada" src="/static/AduanaNacional/img/aduana1.jpg">
 	</center>
-	<div class="log-form">
-		<center>
+	<div class="contenedor">
+		<h1 class="logo"><span class="nombre-empresa">Aduana Nacional</h1>
+		<div class="wrapper animated bounceInLeft">
+		  <div class="info-empresa">
+			<h3>Aduana Nacional</h3>
+			<ul class="servicios">
+			  <li><i class="fa fa-map-marker"></i> {{ Zona }}</li>
+			  <li><i class="fa fa-mobile"></i> 555 555 000</li>
+			  <li><i class="fa fa-envelope"></i> info@empresa.com</li>
+			</ul>
+		  </div>
+		  <div class="contacto">
 			<h2>{{ accion }} Objeto</h2>
 			<form method="POST" enctype="multipart/form-data">
-			{% csrf_token %}
-			{{ form.as_p }}
-			<input class="btn btn-secondary" type="submit" name="" value="{{ accion }}">
+				{% csrf_token %}
+				{{ form.as_p }}
+			  <input class="btn btn-secondary" type="submit" name="" value="{{ accion }}">
 			</form>
-		</center>
-	</div>
+		  </div>
+		</div>
+	  </div>
 </body>
 </html>
