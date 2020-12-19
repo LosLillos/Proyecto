@@ -23,18 +23,25 @@
 		<form action="/AduanaNacional/inventarioFiltrar/{{ Zona }}/" method="GET">
 			<input type="text" name="filtro">
 			<button type="submit">Buscar</button>
-		</form>	
-	
-		
-		<p class="center-content"><input class="btn btn-secondary" type="submit" name="" value="Añadir Objeto"></p>
+		</form>
+	</div>
+
+	<div style="float: right; margin-right: 20px;">
+		<a class="btn btn-secondary" href="/AduanaNacional/anadirObjeto/{{ Zona }}/">Añadir Objeto</a>
+	</div>
+
+	<br><br>
+
+	<hr color="white">
 
 	<section >
-     <h1 class="align-self-center text-center mx-auto text-light"><FONT SIZE=10>Inventario: {{ Zona }}</FONT></h1>
-  </section>
+    	<h1 class="align-self-center text-center mx-auto text-light"><FONT SIZE=10>Inventario: {{ Zona }}</FONT></h1>
+	</section>
 
   	<center>
   		<section>
 		{% for objeto in Objetos %} 
+		<hr color="white">
 		<section class="">
 			<li>
 				<!---- <h1 class="align-self-center text-center text-light mx-auto">{{ zona.nombre }}</h1> --->

@@ -24,8 +24,6 @@
 <body>
   <img class="portada" src="/static/AduanaNacional/img/aduana1.jpg">
 
-  <br>
-
   <nav class="navbar navbar-expand-lg position-absolute w-100 bg-transparent z-top">
     <div class="container">
         <a class="navbar-brand text-light" href="/admin/"><FONT SIZE=6>Admin</FONT></a>
@@ -43,6 +41,7 @@
 
   
     {% for zona in Zonas %} 
+      <hr color="white">
       <li>
         <!---- <h1 class="align-self-center text-center text-light mx-auto">{{ zona.nombre }}</h1> --->
         <a href="/AduanaNacional/inventario/{{ zona.nombre }}/">
@@ -53,10 +52,9 @@
           <br>
         </a>
       </li>
-      <hr>
     {% endfor %}
 
-
+<hr color="white">
       <!-- Seccion Mapa -->
   <!-- partial:index.partial.html -->
 
