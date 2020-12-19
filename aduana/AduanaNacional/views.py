@@ -38,7 +38,7 @@ def inventario(request,zona):
 	return render(request,'AduanaNacional/inventario.html',{"Objetos":lista_objetos,"Zona":zona})
 
 def objeto(request,zona,desc):
-	objeto = Objeto.objects.get(descripcion=desc)
+	objeto = Objeto.objects.get(descripcion=desc, zona=zona)
 	return render(request,'AduanaNacional/objeto.html',{"Objeto":objeto})
 
 def anadirObjeto(request,zona):
@@ -55,7 +55,7 @@ def anadirObjeto(request,zona):
 			return redirect('/AduanaNacional/inventario/'+zona+'/')
 	else:
 		form = ObjetoForm()
-	return render(request,'AduanaNacional/anadirObjeto.html',{'form':form,'accion':"Añadir"})
+	return render(request,'AduanaNacional/anadirObjeto.html',{'form':form,'accion':"Añadir","Zona":zona})
 
 def editar(request,zona,desc):
 	objeto1 = Objeto.objects.get(descripcion=desc,zona=zona)
@@ -72,7 +72,7 @@ def editar(request,zona,desc):
 			objeto.save()
 			objeto1.delete()
 			return render(request,'AduanaNacional/objeto.html',{"Objeto":objeto})
-	return render(request,'AduanaNacional/anadirObjeto.html',{'form':form,'accion':"Editar"})
+	return render(request,'AduanaNacional/anadirObjeto.html',{'form':form,'accion':"Editar","Zona":zona})
 
 def eliminar(request,zona,desc):
 	objeto = Objeto.objects.get(descripcion=desc,zona=zona)
