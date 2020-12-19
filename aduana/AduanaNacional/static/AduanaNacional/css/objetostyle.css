@@ -1,12 +1,12 @@
 :root {
-    --dark: #000000;
+    --dark: #555555;
     --light: #ffffff;
-    --bg: #202226;
+    --bg: #d1d1d1;
 }
 
 body {
     font-family: 'Titillium Web', sans-serif;
-    background-color: #ffffff;
+    background-color: var(--bg);
     position: relative;
     margin: 0;
     min-height: 100vh;
@@ -15,6 +15,18 @@ body {
 .portada {
 	display: none;
 }
+
+.button1 {
+    background-color: var(--dark);
+    border: 1px solid black;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 4px;
+    display: inline-block;
+  }
 
 @media only screen and (min-width: 300px){
 	.portada {
